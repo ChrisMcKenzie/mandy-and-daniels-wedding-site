@@ -1531,7 +1531,8 @@ a.button i {
 }
 .people-image img {
     opacity: 0.3;
-    max-width: 111px;
+    width: 111px;
+    height: 111px;
     border-radius: 50%;
 }
 .people-image li {
