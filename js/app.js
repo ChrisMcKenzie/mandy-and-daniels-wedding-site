@@ -45,4 +45,8 @@ app.controller("guestbook", ["$scope", "$firebase", function($scope, $firebase) 
       $scope.question = "Are you a robot?"
     }
   }
+}]).controller("registry", ["$scope", "$firebase", function($scope, $firebase) {
+  $scope.donate = function(){
+    angular.element("#paypal").submit();
+  }
 }])
