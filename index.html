@@ -135,7 +135,7 @@
                     <div class="column six right">
                         <h2 class="vibe">Bride’s story</h2>
                         <div class="story">
-                            <p>Amanda McKenzie tiptoed into our lives on October 17, 1994 at Foothill Presprtarian Hospital in Glendora. Always a very sweet, and bashful child. Amanda began her love of baking at a very young age and also began Riding horses the beginning of a bolder Amanda; High School prooved to further her stepping out of her comfort zone as she was Class President three years running.</p>
+                            <p>Amanda McKenzie tiptoed into our lives on October 17, 1994 at Foothill Presprtarian Hospital in Glendora. Always a very sweet, and bashful child. Amanda began her love of baking at a very young age and also began Riding horses the beginning of a bolder Amanda; High School proved to further her stepping out of her comfort zone as she was Class President three years running.</p>
 
                             <p>Amanda continued her education at the Art Institute where she received her Accociate in Science this past December. Daniel Brewster stepped into her life three years ago and swept her off her feet Amanda has fallen madly in love with him, and looks forward to spending the rest of her life with her one true love</p>
 
@@ -224,7 +224,7 @@
                     </div>
                     <div class="clearfix"></div>
                     <div class="timeline-year"><span>2013</span></div>
-                    <div class="column six heart left">
+                    <div class="column six heart right">
                         <div class="box pattern">
                             <span class="date">May 5</span>
                             <h2>The Proposal</h2>
@@ -332,25 +332,20 @@
         <!-- #Wedding Events Section Ends -->
 
         <!-- #Map Section -->
-        <section id="map-section">
+        <!-- <section id="map-section">
             <div class="container">
                 <div id="map-pins">
                     <ul>
                         <li class="wedding">Wedding</li>
-                        <!-- <li class="weddingParty">Wedding Party</li> -->
+
                         <li class="bachelor">Bachelor</li>
                         <li class="bachelorette">Bachelorette</li>
-                        <!-- <li class="hotels">Hotels</li> -->
-                        <!-- <li class="airport">Airport</li> -->
-                        <!-- <li class="attractions">Attractions</li>
-                        <li class="restoraunts">Restoraunts</li>
-                        <li class="shopping">Shopping</li>
-                        <li class="special">Special</li> -->
+                        <li class="hotels">Hotels</li>
                     </ul>
                 </div>
             </div>
             <div id="map"></div>
-        </section>
+        </section> -->
         <!-- #Map Section Ends -->
 
         <!-- Important People Section -->
@@ -533,7 +528,7 @@
         <!-- #Important People Section Ends -->
 
         <!-- Small Gallery Section -->
-        <section id="wedding-gallery" class="pattern">
+        <!-- <section id="wedding-gallery" class="pattern">
             <header class="section-header">
                 <h3 class="section-title">Photo Gallery</h3>
             </header>
@@ -646,11 +641,11 @@
                     </a>
                 </div>
             </div>
-        </section>
+        </section> -->
         <!-- #Small Gallery Section Ends -->
 
         <!-- Our Tweets -->
-        <section id="twitter">
+        <!-- <section id="twitter">
             <header class="section-header">
                 <h3 class="section-title">Our Tweets</h3>
                 <p class="section-tagline">Quisque aliquet erat condimentum sit aptent varius convallis quam a scelerisque nulla accumsan suspendisse scelerisque  aliquet erat aliquet porta erat.</p>
@@ -675,7 +670,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
         <!-- #Our Tweets Ends -->
 
         <!-- Gift Registry Section -->
@@ -755,16 +750,16 @@
         <section id="guestbook" ng-controller="guestbook">
             <header class="section-header">
                 <h3 class="section-title">Guestbook</h3>
-                <p class="section-tagline">Quisque aliquet erat condimentum sit aptent varius convallis quam a scelerisque nulla accumsan suspendisse scelerisque  aliquet erat aliquet porta erat.</p>
+                <!-- <p class="section-tagline">Quisque aliquet erat condimentum sit aptent varius convallis quam a scelerisque nulla accumsan suspendisse scelerisque  aliquet erat aliquet porta erat.</p> -->
             </header>
             <div class="container timeline">
                 <span class="arrow-up"></span>
                 <span class="arrow-down"></span>
                 <div class="row">
-                    <div class="timeline-year start"><span>2014</span></div>
-                    <div ng-repeat="signature in signatures" class="column six heart $index % 2 == 0? 'right movetop' : 'left'">
+                    <div class="timeline-year start"><span>2015</span></div>
+                    <div ng-repeat="signature in signatures" class="column six heart $index % 2 == 0? 'right' : 'left movetop'">
                         <div class="box pattern">
-                            <span ng-if="signature.date" class="date">{{signature.date}}</span>
+                            <span ng-if="signature.date" class="date">{{signature.date | date:'MMM dd'}}</span>
                             <div class="guest">
                                 <p>{{signature.message}}</p>
                                 <span class="name">{{signature.name}}</span>
@@ -781,18 +776,21 @@
                 </header>
                 <div class="container smaller">
                     <div class="row">
-                        <form >
+                        <form name="signature" ng-submit="submit()">
                             <div class="column six">
                                 <label for="name">Name</label>
-                                <input type="text" id="name" name="name">
+                                <input placeholder="Your Name..." type="text" id="name" name="name" ng-model="sig.name" required>
+                                <span class="error" ng-show="signature.name.$error.required">Required!</span><br>
                             </div>
                             <div class="column six">
                                 <label for="email">Email</label>
-                                <input type="text" id="email" name="email">
+                                <input placeholder="Your Email..." type="text" id="email" name="email" ng-model="sig.email" required>
+                                <span class="error" ng-show="signature.email.$error.required">Required!</span><br>
                             </div>
                             <div class="column twelve">
                                 <label for="comment">Comment</label>
-                                <textarea name="comment" cols="30" rows="10"></textarea>
+                                <textarea name="comment" cols="30" rows="10" ng-model="sig.message"></textarea>
+                                <span class="error" ng-show="signature.comment.$error.required">Required!</span><br>
                             </div>
                             <div class="clearfix"></div>
                             <input type="submit" class="color" value="Send your message &rarr;">
@@ -826,7 +824,7 @@
         <section id="contact" class="bgcolor">
             <header class="section-header">
                 <h3 class="section-title">SIGN YOUR RSVP</h3>
-                <p class="section-tagline">Please RSVP before 20 December 2015.</p>
+                <p class="section-tagline">Please RSVP before 28 February 2015.</p>
             </header>
             <div class="form">
                 <div class="container smaller">
