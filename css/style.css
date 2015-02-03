@@ -207,7 +207,7 @@ section section {
     background-repeat: repeat;
 }
 .no-video {
-    background-image: url(../images/hero.jpg);
+    background-image: url(http://mdwedding.s3-us-west-1.amazonaws.com/images/hero.jpg);
 }
 .nobottom-padding {
     padding-bottom: 0;
@@ -643,7 +643,7 @@ a.button i {
     vertical-align: bottom;
 }
 .hero {
-    background-image: url(../images/hero.jpg);
+    background-image: url(http://mdwedding.s3-us-west-1.amazonaws.com/images/hero.jpg);
     position: relative;
     overflow: hidden;
     width: 100%;
@@ -1224,10 +1224,10 @@ a.button i {
     z-index: 9;
 }
 #couple .girl {
-    background-image: url(../images/couple_her.jpg);
+    background-image: url(http://mdwedding.s3-us-west-1.amazonaws.com/images/couple_her.jpg);
 }
 #couple .boy {
-    background-image: url(../images/couple_him.jpg);
+    background-image: url(http://mdwedding.s3-us-west-1.amazonaws.com/images/couple_him.jpg);
 }
 #couple .images .column > span {
     position: absolute;
