@@ -809,7 +809,7 @@
                 <h3 class="section-title">Instagram</h3>
                 <p class="section-tagline">Copy the hashtag below and share your experience from our Wedding :)</p>
             </header>
-            <span class="hash">#brewsterwedding</span>
+            <span class="hash">#brewsterwedding2015</span>
             <div class="container">
                 <div class="instagram-images">
                 </div>
@@ -826,22 +826,22 @@
                 <h3 class="section-title">SIGN YOUR RSVP</h3>
                 <p class="section-tagline">Please RSVP before 28 February 2015.</p>
             </header>
-            <div class="form">
+            <div class="form" ng-controller="rsvp">
                 <div class="container smaller">
                     <div class="row">
-                        <form method="POST" autocomplete="off" class="actionform">
+                        <form ng-submit="submit()">
                             <div class="notification"></div>
                             <div class="column six">
                                 <label for="name">Name</label>
-                                <input type="text" id="name" name="name">
+                                <input type="text" id="name" name="name" ng-model="rsvp.name">
                             </div>
                             <div class="column six">
                                 <label for="email">Email</label>
-                                <input type="text" id="email" name="email">
+                                <input type="text" id="email" name="email" ng-model="rsvp.email">
                             </div>
                             <div class="column six">
                                 <label for="persons">Number of guests</label>
-                                <select name="persons" id="persons">
+                                <select name="persons" id="persons" ng-model="rsvp.guests">
                                     <option value="One" disabled selected="selected"> How many persons?</option>
                                     <option value="One">One</option>
                                     <option value="Two">Two</option>
@@ -852,9 +852,12 @@
                                 </select>
                             </div>
                             <div class="column six auto-safe">
-                                <label for="autovalue">Security question</label>
-                                <input type="text" id="autovalue" name="autovalue">
-                                <i class="fa fa-refresh auto-refresh" title="Reload security question"></i>
+                                <label for="autovalue">{{question}}</label>
+                                <input type="text" id="autovalue" name="autovalue" ng-model="answer">
+                                <!-- <i class="fa fa-refresh auto-refresh" title="Reload security question"></i> -->
+                            </div>
+                            <div class="column twelve">
+                                <center><label>{{message}}</div></label></center>
                             </div>
                             <input type="hidden" name="submit">
                             <div class="clearfix"></div>
