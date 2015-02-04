@@ -37,7 +37,7 @@ app.controller("guestbook", ["$scope", "$firebase", function($scope, $firebase) 
   $scope.submit = function(){
     if($scope.answer == answer || ($scope.question == "Are you a robot?" && $scope.answer === "no")){
       $scope.rsvp.date = Date.now();
-      $scope.rsvp.guest = parseInt($scope.rsvp.guest, 10);
+      $scope.rsvp.guests = parseInt($scope.rsvp.guests, 10);
       rsvps.$add($scope.rsvp);
       $scope.message = "Rsvp Successfully Sent..."
     } else if($scope.question == "Are you a robot?" && $scope.answer !== "no") {
